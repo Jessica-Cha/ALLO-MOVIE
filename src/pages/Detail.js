@@ -31,7 +31,11 @@ function Detail(){
             <p className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">{film.vote_average} sur 10</p>
         </div>
         <div className="px5 pb-5">
-            <p className="text-xs mt-3 font-semibold text-purple-500 dark:text-white">{film['genres'][0]['name']}</p>
+            <p className="text-xs mt-3 font-semibold text-purple-500 dark:text-white">
+                {film?.genres?.map((e) => {
+                return <span> {e.name} </span>;
+                })}
+            </p>
             <p className="text-sm mt-3 text-justify text-gray-900 dark:text-white">{film.overview}</p>
         </div>
         <div className="flex items-center mt-5">
